@@ -13,6 +13,7 @@ cpdef Interval filterBed(Interval bedline, int min_length, int max_length):
         unicode name
         long start, end, length
         bool strandeness_correct, length_correct, chrom_correct
+        Interval alignment
 
     chrom1,start1,end1 = bedline[:3]
     chrom2, start2, end2 = bedline[3:6]
@@ -36,10 +37,8 @@ cpdef Interval filterBed(Interval bedline, int min_length, int max_length):
         return alignment
 
 
-cpdef int processFile(bed_iterator):
+cpdef int processFile(bed_iterator, int min_length, int max_length):
     cdef:
-        int min_length = 10
-        int max_length = 10000
         Interval frag
 
     for frag in bed_iterator \
