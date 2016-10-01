@@ -2,7 +2,7 @@ This package install a script to convert bedpe file to bed file
 
 To install:
 ```
-pip install git+https://github.com/wckdouglas/pileup2bed.git
+pip install git+https://github.com/wckdouglas/bedpetobed.git
 ```
 
 ```
