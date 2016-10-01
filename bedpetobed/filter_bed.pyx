@@ -1,3 +1,4 @@
+from __future__ import print_function
 from pybedtools.cbedtools cimport Interval
 from pybedtools.cbedtools import Interval
 import sys
@@ -37,11 +38,11 @@ cpdef Interval filterBed(Interval bedline, int min_length, int max_length):
         return alignment
 
 
-cpdef int processFile(bed_iterator, int min_length, int max_length):
+cpdef int processFile(bed_iterator, int min_length, int max_length, out_handle):
     cdef:
         Interval frag
 
     for frag in bed_iterator \
-        .each(filterBed, min_length, max_length):
-        print str(frag).strip()
+            .each(filterBed, min_length, max_length):
+        print(str(frag).strip(), file = out_handle)
     return 0
