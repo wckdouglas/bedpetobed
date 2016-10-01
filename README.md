@@ -2,7 +2,7 @@ This package install a script to convert bedpe file to bed file
 
 To install:
 ```
-pip install git+https://github.com/wckdouglas/bedpetobed.git
+CC=$(which g++) pip install git+https://github.com/wckdouglas/bedpetobed.git
 ```
 
 ```
