@@ -30,7 +30,7 @@ setup(
     ext_modules = cythonize([Extension('bedpetobed.filter_bed',
                                     ['bedpetobed/filter_bed.pyx'],
                                     include_dirs = [np.get_include(),'./include'])],
-                                    language="c++"),
+                                    language="c++",),
     install_requires=[
           'cython',
           'numpy',
