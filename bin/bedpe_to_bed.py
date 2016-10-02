@@ -21,7 +21,7 @@ def main():
     min_length = args.min
     max_length = args.max
     in_handle = bed_file if bed_file != '/dev/stdin' and bed_file != '-' else sys.stdin
-    out_handle = open(out_file,'w') if bed_file != '-' and bed_file != '/dev/stdout' else sys.stdout
+    out_handle = open(out_file,'w') if out_file != '-' and out_file != '/dev/stdout' else sys.stdout
     bed_iterator = BedTool(in_handle)
     done = processFile(bed_iterator, min_length, max_length, out_handle)
 
