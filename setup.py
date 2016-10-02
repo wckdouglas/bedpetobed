@@ -29,7 +29,9 @@ setup(
     scripts = ['bin/bedpe_to_bed.py'],
     ext_modules = cythonize([Extension('bedpetobed.filter_bed',
                                     ['bedpetobed/filter_bed.pyx'],
-                                    include_dirs = [np.get_include(),'./include'])],
+                                    include_dirs = [np.get_include(),'./include'],
+                                    libraries = ["stdc++", 'z'],
+                                    extra_compile_args=['-libstdc++'])],
                                     language="c++"),
     install_requires=[
           'cython',
